@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Car Inventory System</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Add Car Informations</h2>
+    <form id="carForm">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="model">Model:</label>
+            <input type="text" class="form-control" id="model" required>
+        </div>
+        <div class="form-group">
+            <label for="year">Year:</label>
+            <input type="number" class="form-control" id="year" required>
+        </div>
+
+        <div class="form-group">
+            <label for="carType">Car Type:</label>
+            <select class="form-control" id="carType" required>
+                <option>SELECT</option>
+                <option value="GasCar">Gas Car</option>
+                <option value="ElectricCar">Electric Car</option>
+            </select>
+        </div>
+        <div id="additionalFields"></div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <h2 class="mt-5">Car Inventory</h2>
+    <table class="table" id="carTable">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Car Type</th>
+            <th>Capacity</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+    </table>
+</div>
+{% comment %} <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> {% endcomment %}
+{% comment %} <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script> {% endcomment %}
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% comment %} <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script> {% endcomment %}
+{% comment %} <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script> {% endcomment %}
+<script src="{% static 'car_inventory_app/js/car_inventory.js' %}"></script>
+
+</body>
+</html>
